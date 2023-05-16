@@ -1,7 +1,11 @@
 import classnames from 'classnames';
 import React from 'react';
 
-export const AccordionBody = ( { className, children, ...rest }: JSX.IntrinsicElements['div'] ) => (
+export type TAccordionBodyProps = {
+  description: string;
+} & JSX.IntrinsicElements['div'];
+
+export const AccordionBody = ( { description, className, ...rest }: TAccordionBodyProps ) => (
   <div
     className={classnames(
       'grid grid-rows-collapsed transition-all duration-500 pl-10',
@@ -10,6 +14,6 @@ export const AccordionBody = ( { className, children, ...rest }: JSX.IntrinsicEl
       )}
     {...rest}
   >
-    <div className='overflow-hidden'>{children}</div>
+    <div className='overflow-hidden'>{description}</div>
   </div>
 );
