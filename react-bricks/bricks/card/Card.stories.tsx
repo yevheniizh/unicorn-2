@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Card } from './Card';
+import Card from './Card';
 
 const meta: Meta<typeof Card> = {
   title: 'Example/Card',
@@ -18,10 +18,18 @@ type Story = StoryObj<typeof Card>;
 export const Default: Story = {
     render: ( args ) => <Card {...args} />,
     args: {
-        title: 'Attention please!... Cutie pie',
-        date: new Date( Date.now() ).toLocaleString(),
-        image: '/2cd43b_8c514089fb9046528f6acfa9f60bb414_mv2.png',
-        href: '#',
-        font: 'serif',
+      // @ts-ignore
+      image: {
+        src: '/logo.svg',
+        placeholderSrc:
+          '/logo.svg',
+        srcSet: '',
+        alt: 'Card image',
+        seoName: 'card-image',
+      },
+      title: 'Attention please!... Cutie pie',
+      date: new Date( Date.now() ).toLocaleString(),
+      href: '#',
+      font: 'serif',
     },
 };
