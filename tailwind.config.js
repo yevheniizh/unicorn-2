@@ -4,6 +4,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     './react-bricks/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'font-sans',
+    'font-serif',
+    'font-mono',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
